@@ -70,7 +70,7 @@ Before model building, several steps were conducted to prepare the dataset for m
 - The categorical variable 'status' was one-hot encoded.
 - Scaling was not applied to the numeric variables because decision tree is robust to feature scale
 - 'Year' and 'Country' were dropped from the dataset because, given the use case, we are not interested in temporal patterns. Additionally, using 'Country' as a feature may lead to overly optimistic results due to information leakage, as we are trying to predict a nation's life expectancy based on specific factors.
-- All preprocessing steps were first explored individually to assess their impact. They were then incorporated into a pipeline with the model to avoid information leakage during training and ensure consistency with the test set.
+- All preprocessing steps were first explored individually to assess their impact. They were then incorporated into a pipeline with the model to ensure consistency with the test set.
 
 ### Model Approach
 A decision tree model was selected. A base model was initially created with a maximum depth of 5. Subsequently, a grid search was conducted to determine the optimal combination of maximum depth, minimum sample leaf, and minimum sample split. The hyperparameter grid was tailored to avoid a complex decision tree—meaning a relatively low maximum tree depth and relatively high maximum sample split and leaf.
