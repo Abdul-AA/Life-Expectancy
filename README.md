@@ -59,14 +59,16 @@ This dataset provides a comprehensive view of the factors affecting life expecta
 #### Univariate Analysis
 ![Univariate](https://github.com/Abdul-AA/Life-Expectancy/blob/e4e5c3e60d42c65991291da1b2cef8a81c0273b6/Plots/Univariate.png)
 #### Bivariate Analysis
-![Bivariate](https://github.com/Abdul-AA/Life-Expectancy/blob/e4e5c3e60d42c65991291da1b2cef8a81c0273b6/Plots/Bivariate.png)
-#### Multivariate Analysis
-![Multivariate](https://github.com/Abdul-AA/Life-Expectancy/blob/main/Plots/Multivariate.png)
+##### Insights
 - Developed countries tend to have higher life expectancy, countries with low Diphtheria immunization rates tend to have lower life expectancy, and countries with a high prevalence of thinness among children tend to have lower life expectancy.
 - Life expectancy has not changed substantially over the years regardless of development status.
 - No strong relationahip between life expectancy and HIV/AIDS prevalence.
 - Strong positive relationahip between life expctency vs GDP, percentage of resources allocated to healthcare, BMI. 
 - The relationship between BMI and life expectancy can be complex. A healthy BMI (usually considered to be in the range of 18.5 to 24.9) is often associated with better overall health and lower risks of chronic diseases such as heart disease, diabetes, and certain cancers. However, both underweight (BMI less than 18.5) and obesity (BMI over 30) are linked with increased health risks and potentially lower life expectancy.
+
+![Bivariate](https://github.com/Abdul-AA/Life-Expectancy/blob/e4e5c3e60d42c65991291da1b2cef8a81c0273b6/Plots/Bivariate.png)
+#### Multivariate Analysis
+![Multivariate](https://github.com/Abdul-AA/Life-Expectancy/blob/main/Plots/Multivariate.png)
 
 
 
