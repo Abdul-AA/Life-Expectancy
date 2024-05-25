@@ -70,7 +70,7 @@ Before model building, several steps were conducted to prepare the dataset for m
 - The categorical variable 'status' was one-hot encoded.
 - Scaling was not applied to the numeric variables because decision tree is robust to feature scale
 - 'Year' and 'Country' were dropped from the dataset because, given the use case, we are not interested in temporal patterns. Additionally, using 'Country' as a feature may lead to overly optimistic results due to information leakage, as we are trying to predict a nation's life expectancy based on specific factors.
-- All preprocessing steps were first explored individually to assess their impact. They were then incorporated into a pipeline with the model to avoid information leakage during training and ensure consistency with the test set.
+- All preprocessing steps were first explored individually to assess their impact. They were then incorporated into a pipeline with the model to ensure consistency with the test set.
 
 ### Model Approach
 A decision tree model was selected. A base model was initially created with a maximum depth of 5. Subsequently, a grid search was conducted to determine the optimal combination of maximum depth, minimum sample leaf, and minimum sample split. The hyperparameter grid was tailored to avoid a complex decision tree—meaning a relatively low maximum tree depth and relatively high maximum sample split and leaf.
@@ -87,8 +87,8 @@ With RMSEs of 2.68 and 2.85 on the training and test sets respectively, the mode
 - Strong positive relationahip between life expctency vs GDP, percentage of resources allocated to healthcare, BMI. 
 - The relationship between BMI and life expectancy can be complex. A healthy BMI (usually considered to be in the range of 18.5 to 24.9) is often associated with better overall health and lower risks of chronic diseases such as heart disease, diabetes, and certain cancers. However, both underweight (BMI less than 18.5) and obesity (BMI over 30) are linked with increased health risks and potentially lower life expectancy.
 
-## Explainability of Results
-As mentioned earlier, a simple algorithm was chosen to enhance explainability. More complex, 'black box' algorithms such as ensemble trees might offer better performance but are harder to explain. To further facilitate the model's explainability, the decision rules of the model were programmatically extracted, showing the growth and splits at each node of the decision tree. Additionally, the top tree features were visually displayed to show how the tree splits at each node, the number of samples at each node, the squared error at each node, and the average life expectancy of the samples in each node. Examining these values, along with the decision rules, enhances the explainability of the model.
+## Interpratability of Results
+As mentioned earlier, a simple algorithm was chosen to enhance explainability. More complex, 'black box' algorithms such as ensemble trees might offer better performance but are harder to interprete. To further facilitate the model's interpretability, the decision rules of the model were programmatically extracted, showing the growth and splits at each node of the decision tree. Additionally, the top tree features were visually displayed to show how the tree splits at each node, the number of samples at each node, the squared error at each node, and the average life expectancy of the samples in each node. Examining these values, along with the decision rules, enhances the explainability of the model.
 
 
 ## Threats to Validity
