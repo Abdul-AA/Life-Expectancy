@@ -55,6 +55,8 @@ This dataset aggregates various health factors and indicators across countries, 
 22. **Schooling**: Number of years of Schooling(years).
 
 This dataset provides a comprehensive view of the factors affecting life expectancy and can be used for in-depth analysis and modeling to understand the relationships between these variables and life expectancy.
+#### Univariate Analysis
+![Univariate]()
 
 
 
