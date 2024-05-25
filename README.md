@@ -55,14 +55,20 @@ This dataset aggregates various health factors and indicators across countries, 
 22. **Schooling**: Number of years of Schooling(years).
 
 This dataset provides a comprehensive view of the factors affecting life expectancy and can be used for in-depth analysis and modeling to understand the relationships between these variables and life expectancy.
+
 #### Univariate Analysis
-![Univariate]()
+![Univariate](https://github.com/Abdul-AA/Life-Expectancy/blob/e4e5c3e60d42c65991291da1b2cef8a81c0273b6/Plots/Univariate.png)
+#### Bivariate Analysis
+![Bivariate](https://github.com/Abdul-AA/Life-Expectancy/blob/e4e5c3e60d42c65991291da1b2cef8a81c0273b6/Plots/Bivariate.png)
+#### Multivariate Analysis
+![Multivariate](https://github.com/Abdul-AA/Life-Expectancy/blob/main/Plots/Multivariate.png)
+- Developed countries tend to have higher life expectancy, countries with low Diphtheria immunization rates tend to have lower life expectancy, and countries with a high prevalence of thinness among children tend to have lower life expectancy.
+- Life expectancy has not changed substantially over the years regardless of development status.
+- No strong relationahip between life expectancy and HIV/AIDS prevalence.
+- Strong positive relationahip between life expctency vs GDP, percentage of resources allocated to healthcare, BMI. 
+- The relationship between BMI and life expectancy can be complex. A healthy BMI (usually considered to be in the range of 18.5 to 24.9) is often associated with better overall health and lower risks of chronic diseases such as heart disease, diabetes, and certain cancers. However, both underweight (BMI less than 18.5) and obesity (BMI over 30) are linked with increased health risks and potentially lower life expectancy.
 
 
-
-
-## Model
-Given the goal of this project, parsimony is key. Therefore, I have prioritized simplicity and explainability in selecting the best model. This approach is vital because the aim of the project is not only to predict life expectancy but, more importantly, to understand the factors at play and their influence on life expectancy. 
 
 ### Data Preprocessing
 Before model building, several steps were conducted to prepare the dataset for modeling:
@@ -74,6 +80,8 @@ Before model building, several steps were conducted to prepare the dataset for m
 - 'Year' and 'Country' were dropped from the dataset because, given the use case, we are not interested in temporal patterns. Additionally, using 'Country' as a feature may lead to overly optimistic results due to information leakage, as we are trying to predict a nation's life expectancy based on specific factors.
 - All preprocessing steps were first explored individually to assess their impact. They were then incorporated into a pipeline with the model to ensure consistency with the test set.
 
+## Model
+Given the goal of this project, parsimony is key. Therefore, I have prioritized simplicity and explainability in selecting the best model. This approach is vital because the aim of the project is not only to predict life expectancy but, more importantly, to understand the factors at play and their influence on life expectancy. 
 ### Model Approach
 A decision tree model was selected. A base model was initially created with a maximum depth of 5. Subsequently, a grid search was conducted to determine the optimal combination of maximum depth, minimum sample leaf, and minimum sample split. The hyperparameter grid was tailored to avoid a complex decision tree—meaning a relatively low maximum tree depth and relatively high maximum sample split and leaf.
 
@@ -83,11 +91,7 @@ The root mean squared error (RMSE) was the metric I sought to minimize in evalua
 ## Results and Lesson Learned
 With RMSEs of 2.68 and 2.85 on the training and test sets respectively, the model demonstrates a good balance between bias and variance. The similar RMSE values on unseen data indicate model generalization. After establishing the model's reliability, key insights include:
 - The most important factors affecting life expectancy include the nation's development status, percentage of Diphtheria immunization among one-year-olds, and prevalence of thinness amongst 5-9 year-olds. 
-- Developed countries tend to have higher life expectancy, countries with low Diphtheria immunization rates tend to have lower life expectancy, and countries with a high prevalence of thinness among children tend to have lower life expectancy.
-- Life expectancy has not changed substantially over the years regardless of development status.
-- No strong relationahip between life expectancy and HIV/AIDS prevalence.
-- Strong positive relationahip between life expctency vs GDP, percentage of resources allocated to healthcare, BMI. 
-- The relationship between BMI and life expectancy can be complex. A healthy BMI (usually considered to be in the range of 18.5 to 24.9) is often associated with better overall health and lower risks of chronic diseases such as heart disease, diabetes, and certain cancers. However, both underweight (BMI less than 18.5) and obesity (BMI over 30) are linked with increased health risks and potentially lower life expectancy.
+
 
 ## Interpratability of Results
 As mentioned earlier, a simple algorithm was chosen to enhance explainability. More complex, 'black box' algorithms such as ensemble trees might offer better performance but are harder to interprete. To further facilitate the model's interpretability, the decision rules of the model were programmatically extracted, showing the growth and splits at each node of the decision tree. Additionally, the top tree features were visually displayed to show how the tree splits at each node, the number of samples at each node, the squared error at each node, and the average life expectancy of the samples in each node. Examining these values, along with the decision rules, enhances the explainability of the model.
