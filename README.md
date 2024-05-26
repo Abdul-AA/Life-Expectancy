@@ -1,5 +1,25 @@
 # Predicting Life Expectancy from Health and Economic Indicators
-
+## Table of Contents
+- [Context](#context)
+- [Predicting Life Expectancy: Its Value Across Sectors](#predicting-life-expectancy-its-value-across-sectors)
+  - [Business Implications](#business-implications)
+  - [Economic Impact](#economic-impact)
+  - [Healthcare Significance](#healthcare-significance)
+- [Hypothesis](#hypothesis)
+- [Data Description for "Life Expectancy (WHO)" Dataset](#data-description-for-life-expectancy-who-dataset)
+  - [Data Dictionary](#data-dictionary)
+  - [Univariate Analysis](#univariate-analysis)
+  - [Bivariate Analysis](#bivariate-analysis)
+    - [Insights](#insights)
+  - [Multivariate Analysis](#multivariate-analysis)
+  - [Data Preprocessing](#data-preprocessing)
+- [Model](#model)
+  - [Model Approach](#model-approach)
+  - [Model Evaluation](#model-evaluation)
+- [Results and Lesson Learned](#results-and-lesson-learned)
+- [Interpratability of Results](#interpratability-of-results)
+- [Threats to Validity](#threats-to-validity)
+- [Next Steps](#next-steps)
 ## Context 
 The life expectancy of a country is a crucial indicator of its healthcare quality, influenced by various factors such as HIV prevalence, healthcare funding, and other less tangible elements. Understanding these determinants is essential for a nation to formulate policies and strategies aimed at enhancing its citizens' quality of life. Moreover, this knowledge is beneficial for businesses impacted by life expectancy trends, such as life insurance providers, as it enables them to adapt and optimize their operations in response to these dynamics. Therefore, developing a model that not only predicts a nation's life expectancy with accuracy but also illuminates the contributing factors and their impacts is invaluable for healthcare, political, and economic planning at a national level but also has potential applications at a more localized scale, such as in neighborhood-level planning and analysis.
 
@@ -97,7 +117,7 @@ With RMSEs of 2.68 and 2.85 on the training and test sets respectively, the mode
 
 
 ## Interpratability of Results
-As mentioned earlier, a simple algorithm was chosen to enhance explainability. More complex, 'black box' algorithms such as ensemble trees might offer better performance but are harder to interprete. To further facilitate the model's interpretability, the decision rules of the model were programmatically extracted, showing the growth and splits at each node of the decision tree. Additionally, the top tree features were visually displayed to show how the tree splits at each node, the number of samples at each node, the squared error at each node, and the average life expectancy of the samples in each node. Examining these values, along with the decision rules, enhances the explainability of the model.
+As mentioned earlier, a simple algorithm was chosen to ensure interpretability. More complex, 'black box' algorithms such as ensemble trees might offer better performance but are harder to interprete. To harness the model's interpretability, the decision rules of the model were programmatically extracted, showing the growth and splits at each node of the decision tree. Additionally, the top tree features were visually displayed to show how the tree splits at each node, the number of samples at each node, the squared error at each node, and the average life expectancy of the samples in each node (See the tree above). Examining these values, along with the decision rules, enhances the explainability of the model.
 
 
 ## Threats to Validity
